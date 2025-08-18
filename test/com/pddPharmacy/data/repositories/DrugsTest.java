@@ -79,7 +79,26 @@ class DrugsTest {
 
     @Test
     public void test_drugs_canBe_Updated(){
+        Drug panadol = new Drug();
+        drugs.save(panadol);
+        Drug best = new Drug();
+        drugs.save(best);
 
+        assertEquals(2, drugs.getsize());
+        Drug coke = new Drug();
+        drugs.save(coke);
+        assertEquals(3, drugs.getsize());
+
+
+
+    }
+
+    @Test
+    public void test_drugs_canBe_foundByName(){
+        Drug panadol = new Drug();
+        panadol.setName("panadol");
+        drugs.save(panadol);
+        assertEquals(panadol, drugs.findByName("panadol"));
 
     }
 
