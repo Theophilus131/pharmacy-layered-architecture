@@ -3,29 +3,28 @@ package com.pddPharmacy.services;
 import com.pddPharmacy.data.models.Drug;
 import com.pddPharmacy.data.repositories.Drugs;
 import com.pddPharmacy.dtos.Request.AddDrugRequest;
+import com.pddPharmacy.dtos.Response.AddDrugResponse;
+
+import static com.pddPharmacy.utils.Mappers.map;
 
 public class PharmacistServices {
-   private final Drugs drugs;
+   private Drugs drugs = new Drugs();
 
     public PharmacistServices() {
        this.drugs = new Drugs();
     }
 
-    public void addDrug(AddDrugRequest drugRequest){
+    public AddDrugResponse addDrug(AddDrugRequest drugRequest){
         Drug drug=new Drug();
 
-        drug.setName(drugRequest.getName());
-        drug.setCategory(drugRequest.getCategory());
-        drug.setQuantity(drugRequest.getQuantity());
-        drug.setType(drugRequest.getType());
-        drug.setManufactureOn(drugRequest.getManufactureOn());
-        drug.setExpiryDate(drugRequest.getExpiryDate());
 
+        map(addDrugRequest, new Drug());
         drugs.save(drug);
-
+        return map(drug);
 
 
     }
+
 
 
 }
