@@ -2,7 +2,6 @@ package com.pddPharmacy.data.repositories;
 
 import com.pddPharmacy.data.models.Drug;
 
-import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -46,7 +45,6 @@ public class Drugs {
     public void delete(Drug drug){
         deleteById(drug.getId());
     }
-
 
     public Drug findByName(String name) {
         for(var drug:allDrugs){
