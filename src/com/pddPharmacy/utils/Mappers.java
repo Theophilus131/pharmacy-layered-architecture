@@ -18,10 +18,24 @@ public class Mappers {
         return drug;
     }
 
-    public static Drug map(AddDrugResponse addDrugResponse){
+    public static AddDrugResponse map(Drug drug){
+        AddDrugResponse addDrugResponse = new AddDrugResponse();
+        addDrugResponse.setDrugName(drug.getName());
+        addDrugResponse.setDrugs(drug.getId().intValue());
+
+        return addDrugResponse;
+
+    }
+
+    public static void map(AddDrugRequest drugRequest, Drug drug ){
+        drug.setName(drugRequest.getName());
+        drug.setManufactureOn(drugRequest.getManufactureOn());
+        drug.setCategory(drugRequest.getCategory());
+        drug.setType(drugRequest.getType());
+        drug.setExpiryDate(drugRequest.getExpiryDate());
+        drug.setQuantity(drugRequest.getQuantity());
 
 
-        return null;
     }
 
 
