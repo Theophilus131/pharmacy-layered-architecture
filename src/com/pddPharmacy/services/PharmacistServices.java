@@ -14,9 +14,8 @@ public class PharmacistServices {
        this.drugs = new Drugs();
     }
 
-    public AddDrugResponse addDrug(AddDrugRequest drugRequest){
+    public AddDrugResponse addDrug(AddDrugRequest addDrugRequest){
         Drug drug=new Drug();
-
 
         map(addDrugRequest, new Drug());
         drugs.save(drug);
