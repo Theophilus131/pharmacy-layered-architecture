@@ -9,7 +9,11 @@ import com.pddPharmacy.services.PharmacistServices;
 import java.util.List;
 
 public class PharmacistController {
-    private PharmacistServices pharmacistServices = new PharmacistServices();
+    private final PharmacistServices pharmacistServices;
+
+    public PharmacistController(PharmacistServices pharmacistServices) {
+        this.pharmacistServices = pharmacistServices;
+    }
 
     public AddDrugResponse recordNewDrug(AddDrugRequest addDrugRequest){
         return pharmacistServices.addDrug(addDrugRequest);
