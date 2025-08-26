@@ -25,7 +25,7 @@ public class Drug {
         this.id = id;
     }
 
-    public Long getId(){
+    public long getId(){
         return id;
     }
 
