@@ -55,6 +55,7 @@ class DrugsTest {
 
     }
 
+    
     @Test
     public void test_drugs_can_be_deleted_ById(){
         Drug panadol = new Drug();
@@ -89,9 +90,8 @@ class DrugsTest {
         drugs.save(coke);
         assertEquals(3, drugs.getsize());
 
-
-
     }
+
 
     @Test
     public void test_drugs_canBe_foundByName(){
