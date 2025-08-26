@@ -8,20 +8,14 @@ public class Mappers {
     public static Drug map(AddDrugRequest addDrugRequest){
         Drug drug = new Drug();
 
-        drug.setName(addDrugRequest.getName());
-        drug.setManufactureOn(addDrugRequest.getManufactureOn());
-        drug.setCategory(addDrugRequest.getCategory());
-        drug.setType(addDrugRequest.getType());
-        drug.setExpiryDate(addDrugRequest.getExpiryDate());
-        drug.setQuantity(addDrugRequest.getQuantity());
-
+        map(addDrugRequest, drug);
         return drug;
     }
 
     public static AddDrugResponse map(Drug drug){
         AddDrugResponse addDrugResponse = new AddDrugResponse();
         addDrugResponse.setDrugName(drug.getName());
-        addDrugResponse.setDrugs(drug.getId().intValue());
+        addDrugResponse.setDrugs(drug.getId());
 
         return addDrugResponse;
 
