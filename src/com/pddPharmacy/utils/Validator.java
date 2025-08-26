@@ -13,6 +13,7 @@ public class Validator {
     private static void validateDrugQuantity(AddDrugRequest addDrugRequest) {
     }
 
+
     private static void validateDrugName(AddDrugRequest addDrugRequest) {
         if(addDrugRequest.getQuantity() <= 0) throw new InvalidDrugQualityException("Quantity must be greater than 0");
     }
