@@ -7,8 +7,9 @@ import java.util.List;
 
 
 public class Drugs {
-    private final List<Drug> allDrugs = new ArrayList<>();
+    private  final List<Drug> allDrugs = new ArrayList<>();
     private long id = 0;
+
 
     public void save(Drug panadol){
         panadol.setId(generateId());
@@ -48,9 +49,16 @@ public class Drugs {
 
     public Drug findByName(String name) {
         for(var drug:allDrugs){
+
             if(drug.getName().equalsIgnoreCase(name)); return drug;
         }
         return null;
     }
+
+    public List<Drug> findAll() {
+       return allDrugs;
+    }
+
+
 }
 
