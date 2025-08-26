@@ -1,14 +1,14 @@
 package com.pddPharmacy.dtos.Response;
 
 public class AddDrugResponse {
-    private int drugs;
+    private long drugs;
     private String drugName;
 
-    public int getDrugs() {
+    public long getDrugs() {
         return drugs;
     }
 
-    public void setDrugs(int drugs) {
+    public void setDrugs(long drugs) {
         this.drugs = drugs;
     }
 
