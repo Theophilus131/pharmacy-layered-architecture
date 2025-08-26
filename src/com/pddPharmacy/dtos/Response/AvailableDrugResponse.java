@@ -33,11 +33,9 @@ public class AvailableDrugResponse {
         isExpired = expired;
     }
 
-    public boolean isIsExpired() {
-        return isIsExpired;
-    }
 
-    public void setIsExpired(LocalDate isExpired) {
-        isIsExpired = isExpired;
+    public void setIsExpired(LocalDate expiryDate) {
+        if(expiryDate.isBefore(LocalDate.now())) isIsExpired = true;
+        else isIsExpired = false;
     }
 }
